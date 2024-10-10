@@ -70,8 +70,10 @@
     }
   },
   "release": {
+    "projects": ["*"],
     "version": {
-      "preVersionCommand": "npx nx run-many -t build"
+      "preVersionCommand": "npx nx run-many -t build",
+      "conventionalCommits": true
     }
   },
   "plugins": [
