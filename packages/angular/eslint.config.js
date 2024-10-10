@@ -22,7 +22,7 @@ module.exports = [
         'error',
         {
           type: 'attribute',
-          prefix: 'greenSystems',
+          prefix: 'gs',
           style: 'camelCase',
         },
       ],

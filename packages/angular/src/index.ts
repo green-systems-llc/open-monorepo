@@ -1,1 +1,2 @@
-export * from './lib/angular/angular.component';
+export * from './lib/angular/breadcrumb/breadcrumb.service';
+export * from './lib/angular/watch-resize.directive';

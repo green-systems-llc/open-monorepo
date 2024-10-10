@@ -1,5 +1,5 @@
 // Local.
-import { removeItem } from './remove-item';
+import { removeItem } from './remove-item.function';
 
 /**
  * Removes items from a list based on a predicate function.

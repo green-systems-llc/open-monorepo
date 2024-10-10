@@ -5,3 +5,5 @@ export interface KeyValue<T = unknown> {
 export interface NumberKeyValue<T = unknown> {
   [key: number]: T;
 }
+
+export type AnyKeyValue = KeyValue | NumberKeyValue;

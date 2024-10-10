@@ -1,4 +1,4 @@
-import { removeItem } from './remove-item';
+import { removeItem } from './remove-item.function';
 
 describe('removeItem', () => {
   describe('when item is in list', () => {

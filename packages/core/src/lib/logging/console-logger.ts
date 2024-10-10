@@ -1,7 +1,7 @@
 // Local.
-import { LogLevel } from "./log-level";
-import { KeyValue } from "../key-value";
-import { InMemoryLogConfig, InMemoryLogger } from "./in-memory-logger";
+import { LogLevel } from './log-level';
+import { KeyValue } from '../object/key-value';
+import { InMemoryLogConfig, InMemoryLogger } from './in-memory-logger';
 
 export class ConsoleLogger extends InMemoryLogger {
   private readonly consoleMap: KeyValue<(...data: unknown[]) => void> = {};

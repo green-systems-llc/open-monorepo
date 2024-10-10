@@ -1,4 +1,4 @@
-import { isString } from './is-string';
+import { isString } from './is-string.function';
 
 /**
  * Returns true if the value is not a string.
