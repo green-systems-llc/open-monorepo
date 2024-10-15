@@ -1,9 +1,9 @@
+import { sort } from '../sort/sort.function';
 import { uuid } from '../crypto/uuid.function';
 import { KeyValue } from '../object/key-value';
-import { sort } from '../sort/sort.function';
-import { removeItem } from '../array/remove-item.function';
 import { toArray } from '../array/to-array.function';
 import { FieldSortInfo } from '../sort/field-sort-info';
+import { removeItem } from '../array/remove-item.function';
 import { isObject } from '../type-check/is-object.function';
 import { PrimaryFieldType, Repository } from './repository';
 import { isString } from '../type-check/is-string.function';
@@ -16,6 +16,10 @@ import {
   FindAllCriteria,
 } from './find-criteria';
 
+/**
+ * In-memory repository. This class is an implementation
+ * of the Repository interface using in-memory data.
+ */
 export class InMemoryRepository<
   TPrimaryField extends PrimaryFieldType = string,
   TRecord = KeyValue
