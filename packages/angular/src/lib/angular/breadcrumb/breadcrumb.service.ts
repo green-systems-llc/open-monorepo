@@ -11,6 +11,9 @@ export interface Breadcrumb {
   icon?: string;
 }
 
+/**
+ * Breadcrumb service.
+ */
 @Injectable({
   providedIn: 'root',
 })

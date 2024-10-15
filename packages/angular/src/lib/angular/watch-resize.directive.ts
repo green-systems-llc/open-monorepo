@@ -12,6 +12,10 @@ import {
 // Green systems.
 import { Size } from '@green-systems/core';
 
+/**
+ * Directive that watches for a resize of the target element, and alerts
+ * an event indicating that the element's size has changed.
+ */
 @Directive({
   selector: '[gsWatchSize]',
   standalone: true,
