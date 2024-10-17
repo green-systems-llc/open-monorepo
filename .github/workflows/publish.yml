@@ -1,6 +1,10 @@
 name: Publish
 
 on:
+  # Allows the workflow to be manually triggered
+  workflow_dispatch:
+
+  # Triggers the workflow when a new tag is pushed
   push:
     tags:
       - v*.*.*
