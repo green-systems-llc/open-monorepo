@@ -162,6 +162,61 @@ describe('InMemoryRepository', () => {
     });
   });
 
+  describe('count', () => {
+    let repo: InMemoryRepository;
+    const input = [
+      { id: 1, first: 'John', last: 'Jefferson' },
+      { id: 2, first: 'George', last: 'Jackson' },
+      { id: 3, first: 'Jeff', last: 'Wilson' },
+      { id: 4, first: 'Sam', last: 'Albright' },
+      { id: 5, first: 'Abby', last: 'Stevenson' },
+      { id: 6, first: 'Jeff', last: 'Black' },
+      { id: 7, first: 'Steve', last: 'Smith' },
+      { id: 8, first: 'Jane', last: 'Doe' },
+    ];
+
+    beforeEach(() => {
+      const items = clone(input);
+      repo = new InMemoryRepository(items);
+    });
+
+    describe(`with 'search' option`, () => {
+      it(`should search across all fields`, async () => {
+        const result = await repo.count({ search: 'jeff' });
+        expect(result).toEqual(3);
+      });
+
+      it(`should allow empty string search value`, async () => {
+        const result = await repo.count({ search: '' });
+        expect(result).toEqual(8);
+      });
+    });
+  });
+
+  describe('countAll', () => {
+    let repo: InMemoryRepository;
+    const input = [
+      { id: 1, first: 'John', last: 'Jefferson' },
+      { id: 2, first: 'George', last: 'Jackson' },
+      { id: 3, first: 'Jeff', last: 'Wilson' },
+      { id: 4, first: 'Sam', last: 'Albright' },
+      { id: 5, first: 'Abby', last: 'Stevenson' },
+      { id: 6, first: 'Jeff', last: 'Black' },
+      { id: 7, first: 'Steve', last: 'Smith' },
+      { id: 8, first: 'Jane', last: 'Doe' },
+    ];
+
+    beforeEach(() => {
+      const items = clone(input);
+      repo = new InMemoryRepository(items);
+    });
+
+    it(`should return full count`, async () => {
+      const result = await repo.countAll();
+      expect(result).toEqual(8);
+    });
+  });
+
   describe('findOne', () => {
     let repo: InMemoryRepository;
     const input = [

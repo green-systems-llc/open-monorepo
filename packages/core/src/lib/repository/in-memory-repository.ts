@@ -14,6 +14,7 @@ import {
   FindCriteria,
   AnyFindCriteria,
   FindAllCriteria,
+  FindCountCriteria,
 } from './find-criteria';
 
 /**
@@ -33,6 +34,15 @@ export class InMemoryRepository<
   ) {
     this.ensureIdValues();
     this.isSingleField = isString(this.idField);
+  }
+
+  countAll(): Promise<number> {
+    return Promise.resolve(this.items.length);
+  }
+
+  async count(criteria: FindCountCriteria): Promise<number> {
+    const items = await this.find(criteria);
+    return items.length;
   }
 
   findAll(criteria?: FindAllCriteria): Promise<TRecord[]> {

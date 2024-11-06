@@ -1,5 +1,9 @@
 import { KeyValue } from '../object/key-value';
-import { FindAllCriteria, FindCriteria } from './find-criteria';
+import {
+  FindAllCriteria,
+  FindCountCriteria,
+  FindCriteria,
+} from './find-criteria';
 
 export type PrimaryFieldType = string | number | string[] | number[];
 
@@ -9,6 +13,8 @@ export interface ReadRepository<
 > {
   findAll(criteria?: FindAllCriteria): Promise<TRecord[]>;
   find(criteria: FindCriteria): Promise<TRecord[]>;
+  countAll(): Promise<number>;
+  count(criteria: FindCountCriteria): Promise<number>;
   findOne(criteria: FindCriteria): Promise<TRecord | null>;
   get(ids: TPrimaryField[]): Promise<TRecord[]>;
   getOne(id: TPrimaryField): Promise<TRecord>;

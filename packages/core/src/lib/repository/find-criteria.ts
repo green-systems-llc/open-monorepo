@@ -25,6 +25,10 @@ export interface FindByQueryCriteria
   query: string;
 }
 
+export type FindCountCriteria =
+  | FindBySearchCriteria
+  | FindByQueryCriteria;
+
 export type FindCriteria =
   | FindByPageCriteria
   | FindBySearchCriteria
